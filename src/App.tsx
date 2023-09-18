@@ -2,6 +2,7 @@ import { LatLngExpression } from 'leaflet';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import RecenterMap from './components/RecenterMap';
+import { myIcon } from './utils/Icon.js';
 
 function App() {
 	// api web
@@ -65,6 +66,7 @@ function App() {
 				url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 			/>
 			<Marker
+				icon={myIcon}
 				ref={markerRef}
 				position={geolocation}
 				draggable={true}
